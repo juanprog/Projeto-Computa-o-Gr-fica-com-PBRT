@@ -1,0 +1,198 @@
+#Material para as paredes
+MakeNamedMaterial "corParedes"
+	"string type" ["uber"]
+   	"color Kd" [0.374624 0.374624 0.374624]
+   	"color Ks" [0.047366 0.047366 0.047366]
+   	"color Kr" [0.000000 0.000000 0.000000]
+
+#Material para parede de vidro 
+MakeNamedMaterial "paredeVidro"
+	"string type" "glass" "float eta" [1.]
+
+#Material para os contornos das parade de vidro
+MakeNamedMaterial "contornosVidro"
+	"string type" "plastic" "rgb Kd" [ 0.1 0.1 0.1 ] 
+
+#Textura e material pro chao
+Texture "ceramica" "spectrum" "imagemap" "string filename" [ "textures/ceramica.tga" ] "bool trilinear" [ "true" ] "float uscale" 3 "float vscale" 3
+MakeNamedMaterial "solo"
+	"string type" [ "substrate" ]
+	"rgb Ks" [ 0.040000 0.040000 0.040000 ]
+	"texture Kd" [ "ceramica" ]
+	"float uroughness" [ 0.010000 ]
+	"float vroughness" [ 0.010000 ]
+	"bool remaproughness" [ "false" ]
+
+#Textura e material para as almofodas	
+Texture "texturaAlmofada" "spectrum" "imagemap" "string filename" ["textures/almofada.png"]
+MakeNamedMaterial "almofada" 
+	"string type" "translucent" 
+	"texture Kd" "texturaAlmofada"
+
+#Textura e material para o sofa
+TransformBegin
+	Texture "couch-disp" "float" "wrinkled"
+	Texture "scaled-couch-disp" "float" "scale" "texture tex1" "couch-disp" "float tex2" [.005]
+TransformEnd
+MakeNamedMaterial "couro"
+	"texture bumpmap" "scaled-couch-disp"
+   	"string type" ["uber"]
+   	"color Kd" [0.8 .8 .8]
+   	"color Ks" [0.1 .1 .1] "float roughness" [.02]
+   	"color Kr" [0.000000 0.000000 0.000000]
+
+#Material para o lustre
+MakeNamedMaterial "lustre"    
+	"string type" ["translucent"]
+   	"color Kd" [0.612066 0.612066 0.612066]
+   	"color Ks" [0.047366 0.047366 0.047366]
+
+#Textura e material para madeira	
+Texture "texturaMadeira" "spectrum" "imagemap" "string filename" ["textures/madeira.png"] 
+MakeNamedMaterial "madeira" 
+	"string type" "matte" 
+	"texture Kd" "texturaMadeira"
+
+#Textura e material para as esferas
+Texture "texturaEsferas" "spectrum" "imagemap" "string filename" ["textures/esferas.png"]
+MakeNamedMaterial "esfera" 
+	"string type" "matte" 
+	"texture Kd" "texturaEsferas"
+
+#Textura e material para os livros
+Texture "texturaLivros" "spectrum" "imagemap" "string filename" ["textures/livros.png"]
+MakeNamedMaterial "livros" 
+	"string type" "matte" 
+	"texture Kd" "texturaLivros"
+
+#Textura e material para a tela da televisao	
+Texture "texturaTV" "spectrum" "imagemap" "string filename" ["textures/televisao.png"]
+MakeNamedMaterial "telaTv" 
+	"string type" "matte" 
+	"texture Kd" "texturaTV"
+
+#Textura e material para as bocas do som
+Texture "texturaBocaSom" "spectrum" "imagemap" "string filename" ["textures/boca_som.png"]
+MakeNamedMaterial "bocaSom" 
+	"string type" "matte" 
+	"texture Kd" "texturaBocaSom"
+
+#Textura e material para a parte frontal do DVD
+Texture "texturaDvdFrente" "spectrum" "imagemap" "string filename" ["textures/dvd.png"]
+MakeNamedMaterial "dvdFrente" 
+	"string type" "matte" 
+	"texture Kd" "texturaDvdFrente"
+
+#Material bordas pretas
+MakeNamedMaterial "bordasEscuras"
+    "string type" ["uber"]
+	"color Kd" [.04 .04 .04]
+	"color Ks" [0 0 0] 
+    "color Kr" [.2 .2 .2]
+
+#Material para plastico preto
+MakeNamedMaterial "plasticoEscuro"
+	"string type" "plastic" "rgb Kd" [0.0 0.0 0.0]
+
+#Textura e material para o centro
+Texture "texturaCentro" "spectrum" "imagemap" "string filename" ["textures/centro_madeira.png"]
+MakeNamedMaterial "centro" 
+	"string type" "matte" 
+	"texture Kd" "texturaCentro"
+
+#Textura e material para o livro que esta em cima do centro
+Texture "texturaCentroLivro" "spectrum" "imagemap" "string filename" ["textures/centro_livro.png"]
+MakeNamedMaterial "centroLivro" 
+	"string type" "matte" 
+	"texture Kd" "texturaCentroLivro"
+
+#Textura e material para a flor que esta em cima do centro	
+Texture "texturaCentroFlor" "spectrum" "imagemap" "string filename" ["textures/centro_flor.png"]
+MakeNamedMaterial "centroFlor" 
+	"string type" "matte" 
+	"texture Kd" "texturaCentroFlor"
+
+#Textura e material para o quadro que esta em cima do centro
+Texture "texturaFoto" "spectrum" "imagemap" "string filename" ["textures/cubismo.png"]
+MakeNamedMaterial "foto" 
+	"string type" "matte" 
+	"texture Kd" "texturaFoto"
+
+#Material da jarra que esta em cima do centro
+MakeNamedMaterial "jarra"
+"string type" "plastic" "rgb Kd" [ 1.0 1.0 1.0 ] "rgb Ks" [ 1 1 1 ]
+
+#Material das gavestas que pertencem ao centro
+MakeNamedMaterial "gavetas"
+"string type" "matte" "rgb Kd" [ 1.0 1.0 1.0 ]
+
+#Textura e material para o tapete que esta em cima do pompom	
+TransformBegin
+	Scale 8 8 8
+	Texture "cloth-bump-base" "float" "fbm"
+	Texture "cloth-bump" "float" "scale" "texture tex1" "cloth-bump-base" "float tex2" .025
+TransformEnd
+MakeNamedMaterial "tapetePompom" 
+	"string type" "matte"
+    "rgb Kd" [ 0.1 0.1 .15 ]
+    "texture bumpmap" "cloth-bump"
+
+#Material Inox
+MakeNamedMaterial "inox"
+   	"string type" ["metal"]
+ 	"float roughness" [.01]
+    "spectrum eta" "spds/K.eta.spd"
+   	"spectrum k" "spds/K.k.spd"
+
+#Material Vidro
+MakeNamedMaterial "vidro"
+ 	"string type" ["glass"]
+
+#Material para o liquido da taca que esta em cima do pompom 
+MakeNamedMaterial "taca"
+	"string type" "glass"
+
+#Meio utilizado no liquido da taca que esta em cima do pompom
+MakeNamedMedium "liquido" "string type" "homogeneous"
+	"rgb sigma_a" [0.7586 1.6429 1.9196]
+	"rgb sigma_s" [ 0.0053 0.0 0.0 ] 
+	"string preset" "Merlot" "float scale" .1
+
+#Textura e material para o tapete abaixo do centro
+Texture "rug-kd-img" "color" "imagemap" "string filename" ["textures/carpet-text3b.png"]
+Texture "rug-bump" "float" "imagemap" "string filename" ["textures/carpet-text3a-bump.png"]
+Texture "rug-kd" "color" "scale" "texture tex1" "rug-kd-img" "color tex2" [0.640000 0.640000 0.640000]
+Texture "rug-ks" "color" "constant" "color value" [0.500000 0.500000 0.500000]
+MakeNamedMaterial "tapeteSolo"
+	"string type" "uber" 
+	"texture Kd" "rug-kd" 
+	"texture Ks" "rug-ks" 
+	"float roughness" [0.010408] 
+	"rgb Kt" [0.000000 0.000000 0.000000] 
+	"float index" [1.000000] 
+	"rgb opacity" [1.000000 1.000000 1.000000]
+	"texture bumpmap" "rug-bump"
+
+#Textura e material para as folhas das arvores
+Texture "texturaFolha" "spectrum" "imagemap" "string filename" ["textures/folha.png"]
+MakeNamedMaterial "folha" 
+	"string type" "matte" 
+	"texture Kd" "texturaFolha"
+	
+#Textura e material para os caules das arvores
+Texture "texturaCaule" "spectrum" "imagemap" "string filename" ["textures/caule.png"]
+MakeNamedMaterial "caule" 
+	"string type" "matte" 
+	"texture Kd" "texturaCaule"
+
+#Textura e material para as gramas	
+Texture "texturaGrama" "spectrum" "imagemap" "string filename" ["textures/grama.png"]
+MakeNamedMaterial "grama" 
+	"string type" "matte" 
+	"texture Kd" "texturaGrama"
+
+#Textura e material para a montanha
+Texture "texturaMontanha" "spectrum" "imagemap" "string filename" ["textures/montanha.png"] "float uscale" 3 "float vscale" 3
+MakeNamedMaterial "montanha" 
+	"string type" "matte" 
+	"texture Kd" "texturaMontanha"

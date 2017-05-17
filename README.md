@@ -1,2 +1,2 @@
-# Projeto-Computa-o-Gr-fica-com-PBRT
-Criação de cena realista complexa com o usa da ferramenta PBRT.
+# Projeto-Computacao-Grafica-com-PBRT
+Criação de cena realista complexa com o uso da ferramenta PBRT.

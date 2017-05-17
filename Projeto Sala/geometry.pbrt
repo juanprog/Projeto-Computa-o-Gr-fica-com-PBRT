@@ -1,0 +1,218 @@
+#Luzes
+AttributeBegin
+	#LUZES NOS CANTOS
+	LightSource "point" "rgb I" [ 1 1 1 ] "point from" [ -3 3 3.5 ]
+	LightSource "point" "rgb I" [ 1 1 1 ] "point from" [ 3 3 3.7 ]
+	LightSource "point" "rgb I" [ 5 5 5 ] "point from" [ -3 -3 3.5 ]
+	LightSource "point" "rgb I" [ 1 1 1 ] "point from" [ 3 -3 2 ]
+	
+	#LUZ NO MEIO
+	LightSource "point" "rgb I" [ 5 5 5 ] "point from" [ 0 0 3.5 ]
+	
+	#LUZES NAS RETAS
+	LightSource "point" "rgb I" [ 1 1 1 ] "point from" [ 3 0 2 ]
+	LightSource "point" "rgb I" [ 1 1 1 ] "point from" [ 0 -3 3.7 ]
+	LightSource "point" "rgb I" [ 5 5 5 ] "point from" [ -3 0 2 ]
+ 
+ 	#LUZ DO SOL
+ 	LightSource "distant" "rgb L" [ 30 30 30  ] "point from" [1 -12 4] "point to" [-3 1 1]
+
+ 	#LUZ NO JARRO  
+	LightSource "spot" "rgb I" [ 25 25 25 ] "point from" [ 3 0.8 2 ] "point to" [ 0.25 1.2 1 ] "float coneangle" [ 2 ]
+AttributeEnd
+
+
+#Paredes
+AttributeBegin
+ 	NamedMaterial "corParedes"
+	Shape "plymesh" "string filename" "geometry/Parede_Fundo.ply" 
+	Shape "plymesh" "string filename" "geometry/Parede_Lado.ply" 
+	Shape "plymesh" "string filename" "geometry/Parede_TV.ply" 
+	Shape "plymesh" "string filename" "geometry/Teto.ply" 
+	NamedMaterial "solo"	
+	Shape "plymesh" "string filename" "geometry/Solo.ply"
+AttributeEnd
+
+#Parede de Vidro
+AttributeBegin
+  	NamedMaterial "paredeVidro"
+ 	Shape "plymesh" "string filename" "geometry/ParedeVidro_Vidro.ply" 
+  	NamedMaterial "contornosVidro"	 
+ 	Shape "plymesh" "string filename" "geometry/ParedeVidro_Bordas.ply" 
+AttributeEnd
+
+#Almofada
+AttributeBegin
+	NamedMaterial "almofada"
+	Shape "plymesh" "string filename" "geometry/Almofada_01.ply"
+	Shape "plymesh" "string filename" "geometry/Almofada_02.ply"
+	Shape "plymesh" "string filename" "geometry/Almofada_03.ply"
+	Shape "plymesh" "string filename" "geometry/Almofada_04.ply"
+AttributeEnd
+
+#Sofa
+AttributeBegin	
+	NamedMaterial "couro"
+	Shape "plymesh" "string filename" "geometry/Sofa_01.ply"
+	Shape "plymesh" "string filename" "geometry/Sofa_02.ply"	
+	Shape "plymesh" "string filename" "geometry/Sofa_03.ply"
+AttributeEnd
+
+#Lustre
+AttributeBegin
+	Translate 1 1 0
+ 	AreaLightSource "area" "blackbody L" [2000 1]
+	NamedMaterial "lustre"
+	Shape "plymesh" "string filename" "geometry/Lustre.ply"
+AttributeEnd
+
+
+#Pompom
+AttributeBegin
+	NamedMaterial "couro"
+	Shape "plymesh" "string filename" "geometry/Pompom.ply"
+ 	NamedMaterial "inox" 
+ 	Shape "plymesh" "string filename" "geometry/Pompom_Pe_01.ply" 
+ 	Shape "plymesh" "string filename" "geometry/Pompom_Pe_02.ply" 
+ 	Shape "plymesh" "string filename" "geometry/Pompom_Pe_03.ply" 
+ 	Shape "plymesh" "string filename" "geometry/Pompom_Pe_04.ply" 
+ 	NamedMaterial "vidro"
+ 	Shape "plymesh" "string filename" "geometry/Pompom_Taca.ply" 
+ 	NamedMaterial "taca"
+ 	MediumInterface "liquido" ""
+ 	Shape "plymesh" "string filename" "geometry/Pompom_Taca_Agua.ply"   
+ 	NamedMaterial "tapetePompom"
+ 	Shape "plymesh" "string filename" "geometry/Pompom_Tapete.ply" 
+AttributeEnd
+
+#Tapete
+AttributeBegin
+ 	NamedMaterial "tapeteSolo"
+	Shape "plymesh" "string filename" "geometry/Tapete_Solo.ply" 
+AttributeEnd
+
+#Centro
+AttributeBegin
+	NamedMaterial "centro"
+ 	Shape "plymesh" "string filename" "geometry/Centro_Armacao.ply" 
+	Shape "plymesh" "string filename" "geometry/Centro_Lateral.ply" 	
+	Shape "plymesh" "string filename" "geometry/Centro_Piso.ply" 
+	NamedMaterial "centroFlor"
+	Shape "plymesh" "string filename" "geometry/Centro_Flor.ply" 
+ 	NamedMaterial "vidro"
+	Shape "plymesh" "string filename" "geometry/Centro_Copo_01.ply" 
+	Shape "plymesh" "string filename" "geometry/Centro_Copo_02.ply" 
+	NamedMaterial "gavetas"
+	Shape "plymesh" "string filename" "geometry/Centro_Gavetas.ply" 
+	Shape "plymesh" "string filename" "geometry/Centro_Gaveta_Lateral.ply"
+	NamedMaterial "inox"
+	Shape "plymesh" "string filename" "geometry/Centro_Gaveta_Puxador_01.ply" 
+	Shape "plymesh" "string filename" "geometry/Centro_Gaveta_Puxador_02.ply" 
+	Shape "plymesh" "string filename" "geometry/Centro_Bandeja.ply" 
+	NamedMaterial "jarra"
+	Shape "plymesh" "string filename" "geometry/Centro_Jarra.ply"  	
+	NamedMaterial "centroLivro"	
+	Shape "plymesh" "string filename" "geometry/Centro_Livro.ply" 
+AttributeEnd
+
+#Quadro
+AttributeBegin
+	NamedMaterial "bordasEscuras"
+	Shape "plymesh" "string filename" "geometry/Quadro_Parte_1.1.ply"
+	Shape "plymesh" "string filename" "geometry/Quadro_Parte_02.ply"
+	NamedMaterial "foto"
+	Scale 0.35 0.3 0.35
+	Rotate -32.8 0 1 0   
+	Rotate 39 0 1 0 
+	Rotate -17 0 0 1
+	Translate -3.6 0 2.9
+ 	Shape "trianglemesh"  "integer indices" [0 2 1 0 3 2 ]
+    	"point P" [.5 0 0    0 0 0    0 0 .5    .5 0 .5 ]
+AttributeEnd
+
+#Esfera 1
+AttributeBegin	
+	NamedMaterial "esfera"
+	Translate -1.5 4.25 .935
+	Shape "sphere" "float radius" [.175]
+AttributeEnd
+
+#Esfera 2
+AttributeBegin	
+	NamedMaterial "esfera"
+	Translate -1.9 4.1 .935
+	Shape "sphere" "float radius" [.175]
+AttributeEnd
+
+#Livros
+AttributeBegin
+	NamedMaterial "livros"
+	Shape "plymesh" "string filename" "geometry/Livros.ply" 
+AttributeEnd
+
+#Estante
+AttributeBegin
+	NamedMaterial "dvdFrente"	
+	Shape "plymesh" "string filename" "geometry/Estante_Dvd_Frente.ply"
+ 	NamedMaterial "plasticoEscuro"
+	Shape "plymesh" "string filename" "geometry/Estante_Dvd.ply" 	
+	Shape "plymesh" "string filename" "geometry/Estante_Som.ply" 
+	Shape "plymesh" "string filename" "geometry/Estante_Som_Caixa_01.ply" 
+ 	Shape "plymesh" "string filename" "geometry/Estante_Som_Caixa_02.ply" 
+	Shape "plymesh" "string filename" "geometry/Estante_Som_Caixa_03.ply" 
+	Shape "plymesh" "string filename" "geometry/Estante_Som_Caixa_04.ply" 		
+	NamedMaterial "bocaSom"
+	Shape "plymesh" "string filename" "geometry/Estante_Som_Bolinha_01.ply" 
+ 	Shape "plymesh" "string filename" "geometry/Estante_Som_Bolinha_02.ply" 
+	Shape "plymesh" "string filename" "geometry/Estante_Som_Bolinha_03.ply" 
+	Shape "plymesh" "string filename" "geometry/Estante_Som_Bolinha_04.ply" 
+	NamedMaterial "madeira"
+	Shape "plymesh" "string filename" "geometry/Estante_Parede.ply"
+	Shape "plymesh" "string filename" "geometry/Estante_Suporte_01.ply"
+	Shape "plymesh" "string filename" "geometry/Estante_Suporte_02.ply"
+ 	NamedMaterial "bordasEscuras"
+ 	Shape "plymesh" "string filename" "geometry/Estante_TV_Bordas.ply" 
+	NamedMaterial "telaTv"
+	Shape "plymesh" "string filename" "geometry/Estante_TV_Tela.ply"
+	Material "plastic" "rgb Kd" [ 1 1 4 ]
+	Shape "plymesh" "string filename" "geometry/Estante_Som_Bolinha_05.ply" 
+	Shape "plymesh" "string filename" "geometry/Estante_Som_Bolinha_06.ply" 
+	Shape "plymesh" "string filename" "geometry/Estante_Som_Bolinha_07.ply" 
+AttributeEnd
+
+#Caules das arvores
+AttributeBegin
+	NamedMaterial "caule"
+ 	Shape "plymesh" "string filename" "geometry/Caule_01.ply"
+	Shape "plymesh" "string filename" "geometry/Caule_02.ply"
+	Shape "plymesh" "string filename" "geometry/Caule_03.ply"
+	Shape "plymesh" "string filename" "geometry/Caule_04.ply"
+	Shape "plymesh" "string filename" "geometry/Caule_05.ply"
+AttributeEnd
+
+#Folhas das arvores
+AttributeBegin
+	NamedMaterial "folha"
+	Shape "plymesh" "string filename" "geometry/Folha_01.ply"
+ 	Shape "plymesh" "string filename" "geometry/Folha_02.ply"
+	Shape "plymesh" "string filename" "geometry/Folha_03.ply"
+	Shape "plymesh" "string filename" "geometry/Folha_04.ply"
+	Shape "plymesh" "string filename" "geometry/Folha_05.ply"
+AttributeEnd
+
+#Grama
+AttributeBegin
+	NamedMaterial "grama"
+	Shape "plymesh" "string filename" "geometry/Grama_01.ply"
+	Shape "plymesh" "string filename" "geometry/Grama_02.ply"
+	Shape "plymesh" "string filename" "geometry/Grama_03.ply"
+	Shape "plymesh" "string filename" "geometry/Grama_04.ply"
+	Shape "plymesh" "string filename" "geometry/Grama_05.ply"
+	Shape "plymesh" "string filename" "geometry/Grama_06.ply"
+AttributeEnd
+
+#Montanhas
+AttributeBegin 
+	NamedMaterial "montanha"
+	Shape "plymesh" "string filename" "geometry/Montanhas.ply"
+AttributeEnd

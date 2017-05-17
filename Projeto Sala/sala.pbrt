@@ -1,0 +1,28 @@
+LookAt 4.15977 -4.24752 2.5   0 0 1.8 0 0 1
+
+Integrator "volpath" "integer maxdepth" [50]
+
+Camera "perspective" "float fov" [50]
+
+Sampler "sobol" "integer pixelsamples" [1024]
+Film "image" "string filename" ["sala.png"]
+     "integer xresolution" [1150] "integer yresolution" [760]
+
+WorldBegin
+
+AttributeBegin
+
+	CoordSysTransform "camera"
+ 	LightSource "infinite" "string mapname" "textures/ceudia.png"
+
+AttributeEnd
+
+Scale -1 1 1
+
+Include "materials.pbrt"
+
+Include "geometria_comentada.pbrt"
+#Include "geometria_descomentada.pbrt"
+
+
+WorldEnd
